@@ -39,7 +39,7 @@
 %   Date: [Creation Date]
 %   Version: 1.0
 
-classdef message
+classdef message < mixin.comparable
     % LOG.MESSAGE - Log message class with metadata and formatting
     % This class represents a complete log entry with all associated
     % metadata and provides methods for processing and displaying the message.
