@@ -24,9 +24,7 @@ classdef (Abstract, HandleCompatible) comparable
 			elseif ~isequal(size(this), size(that))
 				throwAsCaller(MException('MATLAB:dimagree', 'Matrix dimensions must agree.'));
 			end
-			if isa(that, class(this))
-				v = compareObjects(this, that);
-			elseif isa(this, class(that))
+			if strcmp(class(this), class(that))
 				v = compareObjects(that, this);
 			else
 				v = false(size(this));
