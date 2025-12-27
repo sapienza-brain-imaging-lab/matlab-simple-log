@@ -111,7 +111,11 @@ classdef message < mixin.comparable
             
             % Apply sprintf formatting to create final message text
             % This allows for flexible message construction with variable substitution
-            this.Message = sprintf(message, args{:});
+			if isempty(args)
+				this.Message = message;
+			else
+	            this.Message = sprintf(message, args{:});
+			end
         end
 
         function log(this)
